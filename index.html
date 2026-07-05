@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="theme-color" content="#080812" />
+  <title>CyberFlower Language｜未来花语</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <div class="ambient ambient-a"></div>
+  <div class="ambient ambient-b"></div>
+
+  <div class="app-shell">
+    <header class="topbar">
+      <div class="brand-block">
+        <p class="eyebrow">FUTURE EMOTIONAL COMMUNICATION SYSTEM</p>
+        <h1>CyberFlower Language <span>未来花语</span></h1>
+      </div>
+      <div class="signal-pill"><i></i><span>EMOTIONAL SIGNAL ONLINE</span></div>
+    </header>
+
+    <main class="workspace">
+      <aside class="glass-panel control-panel">
+        <section>
+          <div class="section-heading">
+            <span class="index">01</span>
+            <div><b>选择情绪</b><small>EMOTION TYPE</small></div>
+          </div>
+          <div id="emotionButtons" class="emotion-grid"></div>
+        </section>
+
+        <section>
+          <div class="section-heading">
+            <span class="index">02</span>
+            <div><b>情绪参数</b><small>EMOTIONAL PARAMETERS</small></div>
+          </div>
+          <label class="control-row">
+            <div><strong>情绪强度</strong><em id="intensityValue">78%</em></div>
+            <input id="intensity" type="range" min="20" max="100" value="78" />
+          </label>
+          <label class="control-row">
+            <div><strong>持续时间</strong><em id="durationValue">64s</em></div>
+            <input id="duration" type="range" min="10" max="100" value="64" />
+          </label>
+          <label class="control-row">
+            <div><strong>开放程度</strong><em id="expressionValue">72%</em></div>
+            <input id="expression" type="range" min="0" max="100" value="72" />
+          </label>
+        </section>
+
+        <section>
+          <div class="section-heading">
+            <span class="index">03</span>
+            <div><b>情感输入</b><small>MESSAGE INPUT</small></div>
+          </div>
+          <textarea id="messageInput" maxlength="64" placeholder="输入一句想传递的情绪……">有些情绪没有消失，只是变成了缓慢生长的光。</textarea>
+          <div class="sensor-row">
+            <button id="micButton" class="ghost-button">启用声音感应</button>
+            <div class="mic-meter"><i id="micMeter"></i></div>
+          </div>
+          <p class="hint">靠近花心控制开放；声音强度影响粒子与光晕。</p>
+        </section>
+
+        <section class="button-stack">
+          <button id="generateButton" class="primary-button">生成未来花语</button>
+          <div class="button-pair">
+            <button id="archiveButton" class="ghost-button">存入花语档案</button>
+            <button id="saveButton" class="ghost-button">导出花语卡</button>
+          </div>
+        </section>
+      </aside>
+
+      <section class="stage-panel">
+        <div class="stage-toolbar">
+          <div class="view-tabs">
+            <button class="view-tab active" data-view="generator">花语生成</button>
+            <button class="view-tab" data-view="archive">花语档案 <span id="archiveCount">0</span></button>
+          </div>
+          <span id="interactionStatus">MOUSE / AUDIO RESPONSIVE</span>
+        </div>
+
+        <div id="canvasHost" class="canvas-host">
+          <canvas id="flowerCanvas"></canvas>
+          <div class="stage-vignette"></div>
+          <div id="archiveOverlay" class="archive-overlay hidden">
+            <div class="archive-header">
+              <div><b>FLOWER LANGUAGE ARCHIVE</b><small>本地情绪记录</small></div>
+              <button id="clearArchive" class="text-button">清空档案</button>
+            </div>
+            <div id="archiveGrid" class="archive-grid"></div>
+          </div>
+        </div>
+
+        <div class="message-output">
+          <div class="message-meta">
+            <span id="flowerCode">CF-05</span>
+            <b id="emotionName">思念 / LONGING</b>
+          </div>
+          <div class="message-copy">
+            <p id="generatedMessage">思念如光，穿越距离，在沉默里持续靠近。</p>
+            <small id="emotionDescription">弧形花瓣向中心回望，长尾光粒沿轨道缓慢绕行。</small>
+          </div>
+        </div>
+      </section>
+
+      <aside class="glass-panel info-panel">
+        <section class="interpretation-card">
+          <p class="micro-title">EMOTIONAL INTERPRETATION</p>
+          <h2 id="infoEmotionEn">Longing</h2>
+          <h3 id="infoEmotionZh">思念</h3>
+          <p id="infoPoem" class="poem">记忆没有褪色，它只是沿着时间的轨道，反复回到同一个方向。</p>
+          <div class="waveform" id="waveform"></div>
+        </section>
+
+        <section>
+          <div class="section-heading compact">
+            <span class="index">04</span>
+            <div><b>花语语法</b><small>VISUAL GRAMMAR</small></div>
+          </div>
+          <dl id="grammarList" class="grammar-list"></dl>
+        </section>
+
+        <section class="signal-analysis">
+          <div><span>TONE</span><b id="toneValue">温柔 · 怀旧</b></div>
+          <div><span>ENERGY</span><b id="energyValue">柔和 · 流动</b></div>
+          <div><span>RESPONSE</span><b id="responseValue">回旋 · 延迟</b></div>
+        </section>
+
+        <section class="language-card">
+          <p>FLOWER LANGUAGE</p>
+          <blockquote id="languageQuote">思念如光，穿越距离，在沉默里持续靠近。</blockquote>
+        </section>
+      </aside>
+    </main>
+  </div>
+
+  <script src="sketch.js"></script>
+</body>
+</html>
