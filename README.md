@@ -22,3 +22,4 @@
 
 成品界面不展示任何过程标注。阶段实验、形态测试与版本说明单独保存在 `experiments/`、`process_evidence/` 和 `docs/` 中，用于课程过程汇报。
 在线交互作品部署测试
+重新触发 CyberFlower Pages 部署
